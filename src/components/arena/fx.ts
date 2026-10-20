@@ -22,10 +22,10 @@ export const COLORS = {
 };
 
 export const STAGE_RADIUS = 7;
-const PED_R = 5;
+const PED_R = 5.6;
 
 /** Six pedestals on the far half-circle of the stage, 001 left to 006 right. */
 export function pedestalPos(i: number): [number, number, number] {
   const a = Math.PI * (1.08 - (i / 5) * 1.16); // ~194deg to ~-14deg, upper half
-  return [Math.cos(a) * PED_R, 0, -Math.sin(a) * PED_R * 0.85 + 0.6];
+  return [Math.cos(a) * PED_R, 0, -Math.sin(a) * PED_R * 0.7 + 0.8];
 }

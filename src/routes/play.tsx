@@ -76,7 +76,7 @@ function Play() {
 
       {/* player cuttle */}
       <div className="relative h-[30vh] min-h-48">
-        <Canvas camera={{ position: [0, 1.6, 5], fov: 40 }} dpr={[1, 2]}>
+        <Canvas camera={{ position: [0, 1.4, 6.5], fov: 40 }} dpr={[1, 2]}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[2, 5, 4]} intensity={1.5} />
           <group position-y={-1.2}>
@@ -112,9 +112,10 @@ function Play() {
             animate={{ y: 0 }}
             exit={{ y: "110%" }}
             transition={{ type: "spring", stiffness: 220, damping: 24 }}
-            className="holo-panel absolute inset-x-4 bottom-4 z-20 rounded-2xl bg-ink p-5"
+            className="absolute inset-x-4 bottom-4 z-20 rounded-2xl bg-ink"
             onClick={() => setReceipt(null)}
           >
+            <div className="holo-panel rounded-2xl p-5">
             <div className="text-[11px] font-bold tracking-[0.4em] text-alive">PAYMENT ACCEPTED</div>
             <div className="mt-1 font-display text-6xl text-foreground">{receipt.amount.toFixed(2)} EUR</div>
             <div className="mt-3 flex justify-between text-xs text-muted-foreground">
@@ -122,6 +123,7 @@ function Play() {
               <span>{receipt.time}</span>
             </div>
             <div className="mt-3 text-center text-[10px] tracking-[0.3em] text-muted-foreground">TAP TO CLOSE</div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
